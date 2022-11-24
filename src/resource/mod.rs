@@ -1,6 +1,5 @@
-mod http_endpoint;
+use std::hash::Hash;
 
-// the smallest atom of information that we consider
-trait Resource {
-    fn get_tags() -> [String];
-}
+pub mod http_endpoint;
+
+pub trait Resource: Eq + Hash {}

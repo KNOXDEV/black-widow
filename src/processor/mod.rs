@@ -1,7 +1,10 @@
+use crate::resource::Resource;
+
 mod crawl;
 
 trait Processor {
-    type Resource;
+    type Item: Resource;
 
-    fn push_resource(&mut self, resource: Self::Resource);
+    fn should_process(&self, resource: &Self::Item) -> bool;
+    fn process(&self, resource: &mut Self::Item);
 }

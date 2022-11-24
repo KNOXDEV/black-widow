@@ -1,6 +1,9 @@
+use crate::resource::Resource;
 use url::Url;
 
-struct HttpEndpoint {
+#[derive(PartialEq, Eq, Hash)]
+pub struct HttpEndpoint {
     url: Url,
-    method:
 }
+
+impl Resource for HttpEndpoint {}
